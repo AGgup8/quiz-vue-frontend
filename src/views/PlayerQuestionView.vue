@@ -18,7 +18,7 @@ const { question, hasQuestionEnded } = storeToRefs(lobbyStore);
 const playerStore = usePlayerStore();
 const { answer } = storeToRefs(playerStore);
 const fullImageUrl =
-  import.meta.env.VITE_SERVER_IMAGE_DIR + question.value.pictureUrl;
+  import.meta.env.VITE_IMAGE_SERVER + question.value.pictureUrl;
 
 let start;
 const isDisplayingQuestion = ref(false);
