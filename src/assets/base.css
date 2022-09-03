@@ -1,0 +1,157 @@
+:root {
+  --text-color: #000;
+  --primary-color: #FFB800;
+  --border-radius: 0.2rem;
+  --border-width: 2px;
+  --default-font: "Montserrat", sans-serif;
+  --tooth-width: 2.5rem;
+}
+
+html {
+  font-size: 20px;
+  background-color: #F0F0F0;
+  scroll-behavior: smooth;
+}
+
+#packs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  #packs {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    padding: 2rem;
+    height: 100vh;
+    font-size: 16px;
+  }
+}
+
+#lobby {
+  font-size: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  #lobby {
+    font-size: 18px;
+  }
+}
+
+#host {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  #host {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    padding: 2rem;
+    height: 100vh;
+    font-size: 16px;
+  }
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: var(--default-font);
+  font-size: 1rem;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  color: var(--text-color);
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.75em 0;
+  color: var(--text-color);
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 0.83em 0;
+  color: var(--text-color);
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.5em 0
+}
+
+h6 {
+  font-size: 0.75em;
+  margin: 1.67em 0
+}
+
+p {
+  margin: 0.5em 0;
+  font-size: 1em;
+}
+
+ul {
+  margin: 1.12em 0
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.img-fluid {
+  width: auto;
+  height: 100%;
+}
+
+svg {
+  width: var(--tooth-width);
+  height: var(--tooth-width);
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+
+  font-size: 1em;
+  box-sizing: border-box;
+}
+input[type=text] {
+  width: 100%;
+}
+input[type=checkbox] {
+  margin-right: 1rem;
+}
+
+label {
+  margin-right: 0.5rem;
+}
+
+select {
+  display: flex;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: var(--border-width) solid #000;
+  border-radius: var(--border-radius);
+  width: 100%;
+  background-color: #F0F0F0;
+  font-size: 1em;
+}
+
+option {
+  background-color: white;
+  font-size: 1em;
+}

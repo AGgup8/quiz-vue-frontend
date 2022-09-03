@@ -1,0 +1,60 @@
+this.state = {
+    userCardInfo: {
+        // something
+    }
+}
+
+import { paymentProcessor } from "PaymentProcessor";
+
+processCreditCard = async() => {
+    const { userCardInfo } = this.state;
+    - const massagedData = messageCCNPayload(userCardInfo);
+
+    try {
+        // don't have to massage data
+        - const creditCardInfo = await wePayCreateCreditCard(massageData);
+        - const payment = await paymentHandler(creditCardInfo, userCardInfo);
+        + const creditCardInfo = await paymentProcessor.processCreditCard(
+            userCardInfo
+        )
+        + const payment = paymentAPI(creditCardInfo);
+        
+
+        return successHandler(payment);
+    } catch(err) {
+        return errorHandler(err);
+    }
+}
+
+// INTERFACE
+
+const wePayAdapter = payload => {
+    // adapts the payload[userCardInfo] for the WePay inmplementation
+    return payload; // no adpatation is needed at the moment
+}
+
+const paymentProcessor = {
+    // hey view (high level module)
+    // you can assume I am going to return a promise and a specific data format
+    // but you must give me the card data in a format that I can run thtough an adapter
+    processCreditCard: function(userCardInfo) {
+        const messagedData = wePayAdapter(userCardInfo);
+
+        // hey low level module
+        // I expect you to have a function called processCreditCard
+        // I expect you to give me back a promise with a specific data format
+        // I will give you message data from the view (high level module) 
+        return processor.processCreditCard(massagedData)
+    }
+}
+
+// SERVICE
+
+import { wePayAPI } from "wepay-api";
+const wePayService = {
+    processCreditCard: function(payload) {
+        // implementation that interacts with the external
+        wepayAPI.createCreditCard(payload);
+    }
+}
+

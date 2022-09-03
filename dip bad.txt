@@ -1,0 +1,29 @@
+this.state = {
+    userCardInfo: {
+        // something
+    }
+}
+
+processCreditCard = async() => {
+    const { userCardInfo } = this.state;
+    const massagedData = messageCCNPayload(userCardInfo);
+
+    try {
+        // changing wePayCreateCreditCard means we have to change
+        // messageData param
+        const creditCardInfo = await wePayCreateCreditCard(massageData);
+
+        // depends on wePayCreateCreditCard to return specific data
+        const payment = await paymentHandler(creditCardInfo, userCardInfo);
+
+        return successHandler(payment);
+    } catch(err) {
+        return errorHandler(err);
+    }
+}
+
+[wePayCreateCreditCard returns some specific data structure]
+
+[payment handler expect the two argument, each object argument must be
+in a certain structure. messages the data again and sends it to the
+paymentAPI()]
