@@ -30,10 +30,12 @@ function nextQuestion() {
 }
 
 function toggleCorrect(playerId, correct) {
-  eventEmitter.toggleCorrect({
-    playerId,
-    correct,
-  });
+  if (hasQuestionEnded) {
+    eventEmitter.toggleCorrect({
+      playerId,
+      correct,
+    });
+  }
 }
 
 // function hideAnswer() {
