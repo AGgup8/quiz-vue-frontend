@@ -30,7 +30,7 @@ function nextQuestion() {
 }
 
 function toggleCorrect(playerId, correct) {
-  if (hasQuestionEnded) {
+  if (hasQuestionEnded.value) {
     eventEmitter.toggleCorrect({
       playerId,
       correct,
